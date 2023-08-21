@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-
-import 'pages/page1.dart';
+import 'package:provider/provider.dart';
+import 'package:todo/providers/function_state.dart';
+import 'pages/page_1.dart';
 
 main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(
+      providers: [ChangeNotifierProvider(create: (_) => Fstate())],
+      child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
